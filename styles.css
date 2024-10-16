@@ -338,3 +338,27 @@ html, body {
     margin: 40px auto 80px auto;
     font-size: 1.75em;
 }
+
+#item1 {
+    display: none;
+}
+
+#item2 {
+    display: none;
+}
+
+#item3 {
+    display: none;
+}
+
+#item4 {
+    display: none;
+}
+
+#item5 {
+    display: none;
+}
+
+#item6 {
+    display: none;
+}
