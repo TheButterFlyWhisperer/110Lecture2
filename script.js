@@ -1,92 +1,68 @@
-function addToCart(item1){
-    var item = document.getElementById(item1);
-     
-    if (item1) {
-        item1.style.display = "flex";
+function addToCart(itemId){
+    var item = document.getElementById(itemId);
+    if (item) {
+        item.style.display = "flex";
     }
-}
-   
-function addToCart(item2){
-    var item = document.getElementById(item2);
+    var priceElement = item.getElementsByClassName('cart-price')[0];
+    var price = parseFloat(priceElement.innerText.replace('$', ''));
 
-    if (item2) {
-        item2.style.display = "flex";
-    }
-}
-
-function addToCart(item3){
-    var item = document.getElementById(item3);
-
-    if (item3) {
-        item3.style.display = "flex";
-    }
+    var totalElement = document.getElementById('total');
+    var curTotal = parseFloat(totalElement.innerText.replace('$', ''));
+    var NewTotal = curTotal + price;
+    totalElement.innerText = '$' + NewTotal.toFixed(2);
+    
 }
 
-
-function addToCart(item4){
-    var item = document.getElementById(item4);
-
-    if (item4) {
-        item4.style.display = "flex";
-    }
-}
-
-function addToCart(item5){
-    var item = document.getElementById(item5);
-
-    if (item5) {
-        item5.style.display = "flex";
-    }
-}
-
-function addToCart(item6){
-    var item = document.getElementById(item6);
-
-    if (item6) {
-        item6.style.display = "flex";
-    }
-}
-
-
-function removeFromCart(item1){
-
-    if (item1) {
-        item1.style.display = "none";
-    }
-}
-
-function removeFromCart(item2){
-
-    if (item2) {
+function removeFromCart(itemId){
+    var item = document.getElementById(itemId);
+    if (item) {
         item.style.display = "none";
     }
+    var priceElement = item.getElementsByClassName('cart-price')[0];
+    var price = parseFloat(priceElement.innerText.replace('$', ''));
+
+    var totalElement = document.getElementById('total');
+    var currentTotal = parseFloat(totalElement.innerText.replace('$', ''));
+    var newTotal = currentTotal + price;
+    totalElement.innerText = '$' + newTotal.toFixed(2);
+    
 }
 
-function removeFromCart(item3){
 
-    if (item3) {
-        item3.style.display = "none";
+
+function updateCartTotal(){
+    var cartItemContainer = document.getElementsByClassName('cart-items')[0];
+    var cartRows = cartItemContainer.getElementsByClassName('cart-row');
+    var total = 0;
+    for (var i = 0; i < cartRows.length; i++) {
+        var cartRow = cartRows[i];
+        var priceElement = cartRow.getElementsByClassName('cart-price')[0];
+        var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0];
+
+
+        if (priceElement && quantityElement) {
+            var price = parseFloat(priceElement.innerText.replace('$', ''));
+            var quantity = quantityElement.value;
+            total = total + (price * quantity);
+        }
     }
+    total = Math.round(total * 100) / 100;
+    document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total;
 }
 
-function removeFromCart(item4){
-
-    if (item4) {
-        item4.style.display = "none";
+function updateTotal (){
+    const item = document.getElementById(itemId);
+    const priceElement = item.querySelector('.cart-price');
+    const price = parseFloat(priceElement.innerText.replace('$', ''));
+    const totalElement = document.getElementById('total');
+    const total = parseFloat(totalElement.innerText.replace('$', ''));
+    totalElement.innerText = '$' + (total + price).toFixed(2);
+}
+function clearCart(){
+    var cartItems = document.getElementsByClassName('cart-row');
+    for (var i = 0; i < cartItems.length; i++) {
+        var cartRow = cartItems[i];
+        cartRow.style.display = "none";
     }
+    updateCartTotal();
 }
-
-function removeFromCart(item5){
-
-    if (item5) {
-        item5.style.display = "none";
-    }
-}
-
-function removeFromCart(item6){
-
-    if (item6) {
-        item6.style.display = "none";
-    }
-}
-

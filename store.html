@@ -24,7 +24,7 @@
                     <img class="shop-item-image" src="Images/Album 1.png" >
                     <div class="shop-item-details">
                         <span class="shop-item-price">$12.99</span>
-                        <button class="btn btn-primary shop-item-button" onclick="addToCart(item6)" type="button">ADD TO CART</button> 
+                        <button class="btn btn-primary shop-item-button" onclick="addToCart('item6')" type="button">ADD TO CART</button> 
                     </div>
                 </div>
                 <div class="shop-item">
@@ -32,7 +32,7 @@
                     <img class="shop-item-image" src="Images/Album 2.png" >
                     <div class="shop-item-details">
                         <span class="shop-item-price">$14.99</span>
-                        <button class="btn btn-primary shop-item-button" onclick="addToCart(item5)" type="button">ADD TO CART</button>
+                        <button class="btn btn-primary shop-item-button" onclick="addToCart('item5')" type="button">ADD TO CART</button>
                     </div>
                 </div>
                 <div class="shop-item">
@@ -40,7 +40,7 @@
                     <img class="shop-item-image" src="Images/Album 3.png" >
                     <div class="shop-item-details">
                         <span class="shop-item-price">$9.99</span>
-                        <button class="btn btn-primary shop-item-button" onclick="addToCart(item4)"type="button">ADD TO CART</button>
+                        <button class="btn btn-primary shop-item-button" onclick="addToCart('item4')"type="button">ADD TO CART</button>
                     </div>
                 </div>
                 <div class="shop-item">
@@ -48,7 +48,7 @@
                     <img class="shop-item-image" src="Images/Album 4.png" >
                     <div class="shop-item-details">
                         <span class="shop-item-price">$19.99</span>
-                        <button class="btn btn-primary shop-item-button" onclick="addToCart(item3)" type="button">ADD TO CART</button>
+                        <button class="btn btn-primary shop-item-button" onclick="addToCart('item3')" type="button">ADD TO CART</button>
                     </div>
                 </div>
             </div>
@@ -61,7 +61,7 @@
                     <img class="shop-item-image" src="Images/Shirt.png" >
                     <div class="shop-item-details">
                         <span class="shop-item-price">$19.99</span>
-                        <button class="btn btn-primary shop-item-button" onclick="addToCart(item1)"type="button">ADD TO CART</button>
+                        <button class="btn btn-primary shop-item-button" onclick="addToCart('item1')"type="button">ADD TO CART</button>
                     </div>
                 </div>
                 <div class="shop-item">
@@ -69,7 +69,7 @@
                     <img class="shop-item-image" src="Images/Cofee.png" >
                     <div class="shop-item-details">
                         <span class="shop-item-price">$6.99</span>
-                        <button class="btn btn-primary shop-item-button" onclick="addToCart(item2)"type="button">ADD TO CART</button>
+                        <button class="btn btn-primary shop-item-button" onclick="addToCart('item2')"type="button">ADD TO CART</button>
                     </div>
                     
                 </div>
@@ -90,8 +90,8 @@
                     </div>
                     <span class="cart-price cart-column">$19.99</span>
                     <div class="cart-quantity cart-column">
-                        <input class="cart-quantity-input" type="number" value="1">
-                        <button class="btn btn-danger" onclick ="removeFromCart(item1)"type="button">REMOVE</button>
+                        <input class="cart-quantity-input" type="number" value="1" onchange="updateCartTotal()">
+                        <button class="btn btn-danger" onclick ="removeFromCart('item1')"type="button">REMOVE</button>
                     </div>
                 </div>
                 <div class="cart-row" id="item2">
@@ -101,8 +101,8 @@
                     </div>
                     <span class="cart-price cart-column">$6.99</span>
                     <div class="cart-quantity cart-column">
-                        <input class="cart-quantity-input" type="number" value="2">
-                        <button class="btn btn-danger" onclick ="removeFromCart(item2)"type="button">REMOVE</button>
+                        <input class="cart-quantity-input" type="number" value="1" onchange="updateCartTotal()">
+                        <button class="btn btn-danger" onclick ="removeFromCart('item2')"type="button">REMOVE</button>
                     </div>
                 </div>
                 <div class="cart-row" id="item3">
@@ -112,8 +112,8 @@
                     </div>
                     <span class="cart-price cart-column">$19.99</span>
                     <div class="cart-quantity cart-column">
-                        <input class="cart-quantity-input" type="number" value="2">
-                        <button class="btn btn-danger" onclick ="removeFromCart(item3)"type="button">REMOVE</button>
+                        <input class="cart-quantity-input" type="number" value="1" onchange="updateCartTotal()">
+                        <button class="btn btn-danger" onclick ="removeFromCart('item3')"type="button">REMOVE</button>
                     </div>
                 </div>
                 <div class="cart-row" id="item4">
@@ -123,8 +123,8 @@
                     </div>
                     <span class="cart-price cart-column">$9.99</span>
                     <div class="cart-quantity cart-column">
-                        <input class="cart-quantity-input" type="number" value="2">
-                        <button class="btn btn-danger" onclick ="removeFromCart(item4)"type="button">REMOVE</button>
+                        <input class="cart-quantity-input" type="number" value="1" onchange="updateCartTotal()">
+                        <button class="btn btn-danger" onclick ="removeFromCart('item4')"type="button">REMOVE</button>
                     </div>
                 </div>
                 <div class="cart-row" id="item5">
@@ -134,8 +134,8 @@
                     </div>
                     <span class="cart-price cart-column">$14.99</span>
                     <div class="cart-quantity cart-column">
-                        <input class="cart-quantity-input" type="number" value="2">
-                        <button class="btn btn-danger" onclick ="removeFromCart(item5)"type="button">REMOVE</button>
+                        <input class="cart-quantity-input" type="number" value="1" onchange="updateCartTotal()">
+                        <button class="btn btn-danger" onclick ="removeFromCart('item5')"type="button">REMOVE</button>
                     </div>
                 </div>
                 <div class="cart-row" id="item6">
@@ -145,16 +145,16 @@
                     </div>
                     <span class="cart-price cart-column">$12.99</span>
                     <div class="cart-quantity cart-column">
-                        <input class="cart-quantity-input" type="number" value="2">
-                        <button class="btn btn-danger" onclick ="removeFromCart(item6)"type="button">REMOVE</button>
+                        <input class="cart-quantity-input" type="number" value="1" onchange="updateCartTotal()">
+                        <button class="btn btn-danger" onclick ="removeFromCart('item6')"type="button">REMOVE</button>
                     </div>
                 </div>
             </div>
             <div class="cart-total">
                 <strong class="cart-total-title">Total</strong>
-                <span class="cart-total-price"></span>
+                <span class="cart-total-price" id="total">$0.00</span>
             </div>
-            <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
+            <button class="btn btn-primary btn-purchase" type="button" onclick="clearCart()">PURCHASE</button>
         </section>
         <footer class="main-footer">
             <div class="container main-footer-container">
